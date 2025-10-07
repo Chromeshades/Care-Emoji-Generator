@@ -80,10 +80,10 @@ It will print out usage and examples.
 For example:
 
 ```
-python3 cli.py cli_output.png --image gtm52.png
+python3 cli.py ~/Downloads/cli_output.png --image gtm52.png
 ```
 
-In this example, `cli_output.png` will be the new image while `gtm52.png` is the image that will be added to the emoji.
+In this example, `~/Downloads/cli_output.png` will be the new image file while `gtm52.png` is the image that will be added to the emoji.
 
 ### Use `Jupyter Notebook`
 
