@@ -1,7 +1,3 @@
-<!--<a href="http://fvcproductions.com"><img src="https://avatars1.githubusercontent.com/u/4284691?v=3&s=200" title="FVCproductions" alt="FVCproductions"></a>
-
- [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) -->
-
 # Care Emoji Generator
 
 > Transform any image into a cute "care emoji" with loving arms wrapped around it!
@@ -10,24 +6,34 @@
 
 ## 🌐 Try It Online!
 
-**🚀 [Live Web App](https://chromeshades.github.io/Care-Emoji-Generator/)** - Use it directly in your browser!
+**🚀 [Production Web App](https://care.nocapvibes.com)** - High-quality results with full Python processing!
+
+**🌐 [Browser-Only Version](https://chromeshades.github.io/Care-Emoji-Generator/)** - Quick access, no installation required!
 
 ## 🎯 Multiple Ways to Use
 
-### 1. **💻 Command Line Interface (Best Quality)**
+### 1. **� Production Web App (High Quality)**
+- **🌐 [Live at care.nocapvibes.com](https://care.nocapvibes.com)**
+- **High-quality output** with full Python processing
+- Professional web interface with all features
+- ISBN support with Google Books API
+- No installation required - just visit and use!
+- Uses the same high-resolution assets as CLI
+
+### 2. **�💻 Command Line Interface (Best Quality)**
 - **Highest quality output** with professional image processing
 - Perfect for automation and batch processing
 - Uses high-resolution emoji assets and advanced algorithms
 - Supports both images and ISBN lookup
 
-### 2. **🖥️ Local Flask Web App (High Quality)**
+### 3. **🖥️ Local Flask Web App (High Quality)**
 - **High-quality output** same as CLI version
 - Full-featured web interface with beautiful UI
 - ISBN support with Google Books API
 - Run locally on your machine
 - Supports larger output sizes
 
-### 3. **🌐 Web App (Convenient)**
+### 4. **🌐 Browser-Only Web App (Convenient)**
 - **Live Demo**: [https://chromeshades.github.io/Care-Emoji-Generator/](https://chromeshades.github.io/Care-Emoji-Generator/)
 - No installation required
 - Works on mobile and desktop
@@ -58,9 +64,10 @@
 
 ## Table of Contents
 
-- [🌐 Online Web App](#-online-web-app)
-- [� Quality Comparison](#-quality-comparison)
-- [�💻 Command Line Usage](#-command-line-usage)
+- [🚀 Production Web App](#-production-web-app)
+- [🌐 Browser-Only Web App](#-browser-only-web-app)
+- [📈 Quality Comparison](#-quality-comparison)
+- [💻 Command Line Usage](#-command-line-usage)
 - [🖥️ Local Web App](#️-local-web-app)
 - [Installation](#installation)
 - [Examples](#examples)
@@ -69,9 +76,24 @@
 
 ---
 
-## 🌐 Online Web App
+## 🚀 Production Web App
 
-A convenient browser-based version with no installation required.
+**The best online experience** - High-quality results with full Python processing power!
+
+**➡️ [Visit care.nocapvibes.com](https://care.nocapvibes.com)**
+
+**Features:**
+- 🎨 **High-resolution output** (same quality as CLI)
+- 🌐 Beautiful, professional web interface
+- 📚 ISBN book cover integration with Google Books API
+- 🚀 Fast server-side processing
+- 📱 Mobile-responsive design
+- ✨ No installation required - just visit and use!
+- 🔒 Secure HTTPS connection
+
+## 🌐 Browser-Only Web App
+
+A convenient client-side version that runs entirely in your browser.
 
 **➡️ [Try it now at GitHub Pages](https://chromeshades.github.io/Care-Emoji-Generator/)**
 
