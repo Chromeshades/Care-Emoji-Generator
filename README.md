@@ -14,20 +14,25 @@
 
 ## 🎯 Multiple Ways to Use
 
-### 1. **🌐 Web App (Recommended)**
+### 1. **💻 Command Line Interface (Best Quality)**
+- **Highest quality output** with professional image processing
+- Perfect for automation and batch processing
+- Uses high-resolution emoji assets and advanced algorithms
+- Supports both images and ISBN lookup
+
+### 2. **🖥️ Local Flask Web App (High Quality)**
+- **High-quality output** same as CLI version
+- Full-featured web interface with beautiful UI
+- ISBN support with Google Books API
+- Run locally on your machine
+- Supports larger output sizes
+
+### 3. **🌐 Web App (Convenient)**
 - **Live Demo**: [https://chromeshades.github.io/Care-Emoji-Generator/](https://chromeshades.github.io/Care-Emoji-Generator/)
 - No installation required
 - Works on mobile and desktop
 - Privacy-focused (images stay in your browser)
-
-### 2. **💻 Command Line Interface**
-- Perfect for automation and batch processing
-- Supports both images and ISBN lookup
-
-### 3. **🖥️ Local Flask Web App**
-- Full-featured web interface
-- ISBN support with Google Books API
-- Run locally on your machine
+- ⚠️ **Note**: Lower quality output due to browser limitations
 
 
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) 
@@ -65,7 +70,7 @@
 
 ## 🌐 Online Web App
 
-The easiest way to use the Care Emoji Generator! No installation required.
+A convenient browser-based version with no installation required.
 
 **➡️ [Try it now at GitHub Pages](https://chromeshades.github.io/Care-Emoji-Generator/)**
 
@@ -76,9 +81,11 @@ The easiest way to use the Care Emoji Generator! No installation required.
 - ✅ Instant results
 - ✅ No registration required
 
+**⚠️ Quality Note:** The browser version produces lower quality output (512x512 with basic emoji graphics) compared to the Python CLI and local web app versions, which use high-resolution assets and professional image processing algorithms.
+
 ## 💻 Command Line Usage
 
-Perfect for developers and automation!
+**Best quality output** with professional image processing algorithms and high-resolution assets.
 
 There is a file named `cli.py` in the `example/` folder. Open terminal and navigate to `example/`. Type the following:
 ```bash
@@ -96,7 +103,7 @@ In this example, `~/Downloads/cli_output.png` will be the new image file while `
 
 ## 🖥️ Local Web App
 
-Want to run the full web interface locally? Great for development or if you need ISBN support.
+**High-quality output** with the same professional image processing as the CLI version, plus a beautiful web interface.
 
 **Quick Start:**
 ```bash
@@ -111,12 +118,13 @@ python main.py
 ```
 
 **Features:**
+- 🎨 **High-resolution output** (same quality as CLI)
 - 🌐 Beautiful web interface  
 - 📤 Drag & drop image upload
 - 📚 ISBN book cover integration
 - 🔍 Real-time image preview  
 - ⬇️ Automatic emoji downloads
-- 🎨 Mobile-responsive design
+- 📱 Mobile-responsive design
 
 ---
 
