@@ -16,10 +16,6 @@
 
 ![](images/banner.png)
 
-> There is a web app to use!
-
-[Web App](https://care-eomji-generator.ue.r.appspot.com)
-
 > How does one use this script?
 
 - Grab an interesting image
@@ -43,11 +39,48 @@
 
 ---
 
+## Installation
+
+### Clone and Setup
+1. Clone the repository:
+```bash
+git clone https://github.com/Chromeshades/Care-Emoji-Generator.git
+cd Care-Emoji-Generator
+```
+
+2. (Recommended) Set up a virtual environment:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate  # On macOS/Linux
+# .venv\Scripts\activate   # On Windows
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Navigate to the example folder to run the scripts:
+```bash
+cd example
+```
+
+---
+
 ## Example
 
 ### Use `cli.py`
 
-There is a file named `cli.py` in the `example/` folder. Open terminal and locate to `example/`. Type following
+### Manual Installation (Alternative)
+If you prefer to install dependencies manually:
+```bash
+pip install Pillow requests
+```
+---
+
+### Use `cli.py`
+
+There is a file named `cli.py` in the `example/` folder. Open terminal and navigate to `example/`. Type the following:
 ```bash
 python3 cli.py -h
 ```
@@ -56,12 +89,6 @@ It will print out usage and examples.
 ### Use `Jupyter Notebook`
 
 There is a `Jupyter Notebook` named `interactive_example.ipynb` for you to use.
-
----
-
-## Installation
-
-Clone the repository. Then you are good to use the scripts!
 
 ---
 
@@ -75,7 +102,7 @@ Clone the repository. Then you are good to use the scripts!
     - 🍴 Fork this repo!
 
 - **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/zeromath/Care-Emoji-Generator.git`
+    - 👯 Clone this repo to your local machine using `https://github.com/Chromeshades/Care-Emoji-Generator.git`
 
 ### Step 2
 
@@ -83,7 +110,7 @@ Clone the repository. Then you are good to use the scripts!
 
 ### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/zeromath/Care-Emoji-Generator/compare/" target="_blank">`https://github.com/zeromath/Care-Emoji-Generator/compare/`</a>.
+- 🔃 Create a new pull request using <a href="https://github.com/Chromeshades/Care-Emoji-Generator/compare/" target="_blank">`https://github.com/Chromeshades/Care-Emoji-Generator/compare/`</a>.
 
 ---
 
@@ -109,7 +136,7 @@ Clone the repository. Then you are good to use the scripts!
 --->
 
 ## Thanks
-This file is created using this [tempalte file](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46).
+This file is created using this [template file](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46).
 
 ## License
 
