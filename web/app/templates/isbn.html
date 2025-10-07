@@ -1,18 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1>Use an ISBN</h1>
-<hr/>
-<form action="/isbn" method="POST" enctype="multipart/form-data">
-  <div class="form-group">
-    <label>Input ISBN</label>
-    <div>
-      <input type="text" name="isbn" id="isbn" maxlength="13"/>
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-header text-center">
+        <h2>📚 Use Book ISBN</h2>
+        <p class="text-muted mb-0">Enter a book's ISBN to use its cover for your care emoji</p>
+      </div>
+      <div class="card-body p-4">
+        <form action="/isbn" method="POST" enctype="multipart/form-data">
+          <div class="mb-4">
+            <label for="isbn" class="form-label">Book ISBN (13 digits)</label>
+            <input type="text" 
+                   name="isbn" 
+                   id="isbn" 
+                   class="form-control form-control-lg"
+                   maxlength="13"
+                   pattern="[0-9]{13}"
+                   placeholder="e.g. 9781234567890"
+                   required />
+            <div class="form-text">
+              Enter the 13-digit ISBN without spaces or hyphens
+            </div>
+          </div>
+          
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-success btn-lg">
+              Get Book Cover
+            </button>
+            <a href="/" class="btn btn-outline-secondary">
+              Back to Home
+            </a>
+          </div>
+        </form>
+        
+        <div class="mt-4 p-3 bg-light rounded">
+          <h6>📖 About ISBNs:</h6>
+          <ul class="small mb-0">
+            <li>ISBN stands for International Standard Book Number</li>
+            <li>Modern books use 13-digit ISBNs (older books may have 10 digits)</li>
+            <li>You can find the ISBN on the book's back cover or copyright page</li>
+            <li>Try: <code>9781475738490</code> as an example</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-  <button type="submit">Submit</button>
-</form>
-  
-
+</div>
 {% endblock %}

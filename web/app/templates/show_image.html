@@ -1,13 +1,43 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<h1>Display an image</h1>
-<hr/>
-<img src={{ url_for('static', filename = userfile) }} />
-<form method="POST" enctype="multipart/form-data">
-  <button type="submit" class="btn btn-primary">Generate</button>
-</form>
-  
-
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-header text-center">
+        <h2>🖼️ Preview Your Image</h2>
+        <p class="text-muted mb-0">This is how your image will look in the care emoji</p>
+      </div>
+      <div class="card-body text-center p-4">
+        <div class="mb-4">
+          <img src="{{ url_for('static', filename=userfile) }}" 
+               class="emoji-preview img-fluid"
+               style="max-height: 400px;"
+               alt="Preview of your uploaded image" />
+        </div>
+        
+        <form method="POST" enctype="multipart/form-data">
+          <div class="d-grid gap-2 d-md-block">
+            <button type="submit" class="btn btn-primary btn-lg px-5">
+              🤗 Generate Care Emoji
+            </button>
+          </div>
+        </form>
+        
+        <div class="mt-4">
+          <a href="/" class="btn btn-outline-secondary">
+            Start Over
+          </a>
+        </div>
+        
+        <div class="mt-4 p-3 bg-light rounded">
+          <p class="small mb-0">
+            <strong>What happens next?</strong><br>
+            When you click "Generate Care Emoji", your image will be transformed into a cute care emoji with loving arms wrapped around it!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
