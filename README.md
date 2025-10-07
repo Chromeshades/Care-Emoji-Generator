@@ -4,9 +4,30 @@
 
 # Care Emoji Generator
 
-> This is a script for generating care-emoji.
+> Transform any image into a cute "care emoji" with loving arms wrapped around it!
 
 > The image files can be found at this [website](https://gamingph.com/2020/05/psd-download-for-facebook-care-emoji/).
+
+## 🌐 Try It Online!
+
+**🚀 [Live Web App](https://chromeshades.github.io/Care-Emoji-Generator/)** - Use it directly in your browser!
+
+## 🎯 Multiple Ways to Use
+
+### 1. **🌐 Web App (Recommended)**
+- **Live Demo**: [https://chromeshades.github.io/Care-Emoji-Generator/](https://chromeshades.github.io/Care-Emoji-Generator/)
+- No installation required
+- Works on mobile and desktop
+- Privacy-focused (images stay in your browser)
+
+### 2. **💻 Command Line Interface**
+- Perfect for automation and batch processing
+- Supports both images and ISBN lookup
+
+### 3. **🖥️ Local Flask Web App**
+- Full-featured web interface
+- ISBN support with Google Books API
+- Run locally on your machine
 
 
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) 
@@ -32,9 +53,58 @@
 
 ## Table of Contents
 
-- [Example](#example)
+- [🌐 Online Web App](#-online-web-app)
+- [💻 Command Line Usage](#-command-line-usage)
+- [🖥️ Local Web App](#️-local-web-app)
 - [Installation](#installation)
+- [Examples](#examples)
+- [Contributing](#contributing)
 - [License](#license)
+
+---
+
+## 🌐 Online Web App
+
+The easiest way to use the Care Emoji Generator! No installation required.
+
+**➡️ [Try it now at GitHub Pages](https://chromeshades.github.io/Care-Emoji-Generator/)**
+
+**Features:**
+- ✅ Works in any modern browser
+- ✅ Mobile-friendly responsive design
+- ✅ Privacy-focused (images never leave your browser)
+- ✅ Instant results
+- ✅ No registration required
+
+## 💻 Command Line Usage
+
+Perfect for developers and automation!
+
+### 🖥️ Local Web App
+
+Want to run the full web interface locally? Great for development or if you need ISBN support.
+
+**Quick Start:**
+```bash
+./start_webapp.sh
+```
+
+**Or step by step:**
+```bash
+cd web
+python main.py
+# Open http://localhost:5337
+```
+
+**Features:**
+- 🌐 Beautiful web interface  
+- 📤 Drag & drop image upload
+- 📚 ISBN book cover integration
+- 🔍 Real-time image preview  
+- ⬇️ Automatic emoji downloads
+- 🎨 Mobile-responsive design
+
+---
 
 
 ---
@@ -67,9 +137,31 @@ cd example
 
 ---
 
-## Example
+## Examples
 
-### Use `cli.py`
+### 🖥️ Local Web App
+
+For the full-featured local web interface:
+
+```bash
+# Start the Flask web app
+./start_webapp.sh
+
+# Or manually:
+cd web
+python main.py
+```
+
+Then open your browser to `http://localhost:5337`
+
+**Features:**
+- Beautiful web interface
+- Image upload support
+- ISBN book cover lookup
+- Real-time preview
+- Automatic downloads
+
+### 💻 Command Line Interface
 
 There is a file named `cli.py` in the `example/` folder. Open terminal and navigate to `example/`. Type the following:
 ```bash
@@ -79,15 +171,15 @@ It will print out usage and examples.
 
 For example:
 
-```
+```bash
 python3 cli.py ~/Downloads/cli_output.png --image gtm52.png
 ```
 
 In this example, `~/Downloads/cli_output.png` will be the new image file while `gtm52.png` is the image that will be added to the emoji.
 
-### Use `Jupyter Notebook`
+### 📓 Jupyter Notebook
 
-There is a `Jupyter Notebook` named `interactive_example.ipynb` for you to use.
+There is a `Jupyter Notebook` named `interactive_example.ipynb` for you to use interactively.
 
 ---
 
