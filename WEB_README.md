@@ -24,7 +24,7 @@ A Flask web application that transforms images into cute "care emojis" with lovi
    ```
 
 3. **Open Your Browser**:
-   Navigate to `http://localhost:`
+   Navigate to `http://localhost:5337`
 
 ## How to Use
 
