@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Emoji Generator - GitHub Pages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .care-emoji-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 30px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+        .preview-canvas {
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            max-width: 100%;
+        }
+        #output-canvas {
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="care-emoji-container">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">
+                    🤗 Care Emoji Generator
+                </a>
+                <div class="navbar-nav ms-auto">
+                    <span class="nav-text text-muted">Client-Side Version for GitHub Pages</span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- Step 1: Upload Image -->
+            <div class="step active" id="step1">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <h2>📤 Upload Your Image</h2>
+                                <p class="text-muted mb-0">Choose an image to transform into a care emoji</p>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="mb-4">
+                                    <label for="imageInput" class="form-label">Select Image File</label>
+                                    <input type="file" 
+                                           id="imageInput" 
+                                           class="form-control form-control-lg"
+                                           accept="image/*" />
+                                    <div class="form-text">
+                                        Supported formats: JPG, JPEG, PNG, GIF, WebP
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <canvas id="preview-canvas" class="preview-canvas" style="display: none;"></canvas>
+                                </div>
+                                
+                                <div class="d-grid gap-2 mt-3">
+                                    <button id="generateBtn" class="btn btn-primary btn-lg" style="display: none;">
+                                        🤗 Generate Care Emoji
+                                    </button>
+                                </div>
+                                
+                                <div class="mt-4 p-3 bg-light rounded">
+                                    <h6>💡 Tips for best results:</h6>
+                                    <ul class="small mb-0">
+                                        <li>Use clear, high-contrast images</li>
+                                        <li>Square images work best</li>
+                                        <li>Faces and objects with clear outlines are ideal</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Generated Emoji -->
+            <div class="step" id="step2">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <h2>🎉 Your Care Emoji is Ready!</h2>
+                                <p class="text-muted mb-0">Right-click to save the image</p>
+                            </div>
+                            <div class="card-body text-center p-4">
+                                <canvas id="output-canvas"></canvas>
+                                
+                                <div class="mt-4 d-grid gap-2">
+                                    <button id="downloadBtn" class="btn btn-success btn-lg">
+                                        📥 Download Care Emoji
+                                    </button>
+                                    <button id="newImageBtn" class="btn btn-outline-primary">
+                                        📤 Upload Another Image
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        class CareEmojiGenerator {
+            constructor() {
+                this.emojiImg = null;
+                this.armImg = null;
+                this.init();
+            }
+
+            async init() {
+                // Load the emoji base images
+                await this.loadImages();
+                this.setupEventListeners();
+            }
+
+            async loadImages() {
+                // Load the actual emoji images
+                this.emojiImg = await this.loadImage('emoji.png');
+                this.armImg = await this.loadImage('arm.png');
+            }
+
+            loadImage(src) {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => resolve(img);
+                    img.onerror = reject;
+                    img.src = src;
+                });
+            }
+
+            createEmojiBase() {
+                return new Promise((resolve) => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 512;
+                    canvas.height = 512;
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Create a simple emoji base (yellow circle with face)
+                    ctx.fillStyle = '#FFD700';
+                    ctx.beginPath();
+                    ctx.arc(256, 256, 200, 0, 2 * Math.PI);
+                    ctx.fill();
+                    
+                    // Add a simple face
+                    ctx.fillStyle = '#000';
+                    // Eyes
+                    ctx.beginPath();
+                    ctx.arc(200, 200, 15, 0, 2 * Math.PI);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(312, 200, 15, 0, 2 * Math.PI);
+                    ctx.fill();
+                    
+                    // Mouth (smile)
+                    ctx.beginPath();
+                    ctx.arc(256, 280, 50, 0, Math.PI);
+                    ctx.lineWidth = 8;
+                    ctx.strokeStyle = '#000';
+                    ctx.stroke();
+                    
+                    const img = new Image();
+                    img.onload = () => resolve(img);
+                    img.src = canvas.toDataURL();
+                });
+            }
+
+            createArms() {
+                return new Promise((resolve) => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = 512;
+                    canvas.height = 512;
+                    const ctx = canvas.getContext('2d');
+                    
+                    // Create simple arms
+                    ctx.strokeStyle = '#FFD700';
+                    ctx.lineWidth = 30;
+                    ctx.lineCap = 'round';
+                    
+                    // Left arm
+                    ctx.beginPath();
+                    ctx.moveTo(50, 300);
+                    ctx.quadraticCurveTo(100, 250, 180, 280);
+                    ctx.stroke();
+                    
+                    // Right arm
+                    ctx.beginPath();
+                    ctx.moveTo(462, 300);
+                    ctx.quadraticCurveTo(412, 250, 332, 280);
+                    ctx.stroke();
+                    
+                    const img = new Image();
+                    img.onload = () => resolve(img);
+                    img.src = canvas.toDataURL();
+                });
+            }
+
+            setupEventListeners() {
+                const imageInput = document.getElementById('imageInput');
+                const generateBtn = document.getElementById('generateBtn');
+                const downloadBtn = document.getElementById('downloadBtn');
+                const newImageBtn = document.getElementById('newImageBtn');
+
+                imageInput.addEventListener('change', (e) => this.handleImageUpload(e));
+                generateBtn.addEventListener('click', () => this.generateEmoji());
+                downloadBtn.addEventListener('click', () => this.downloadEmoji());
+                newImageBtn.addEventListener('click', () => this.resetToStep1());
+            }
+
+            handleImageUpload(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        this.userImage = img;
+                        this.showPreview(img);
+                        document.getElementById('generateBtn').style.display = 'block';
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+
+            showPreview(img) {
+                const canvas = document.getElementById('preview-canvas');
+                const ctx = canvas.getContext('2d');
+                
+                // Calculate dimensions to fit the image nicely
+                const maxSize = 300;
+                let { width, height } = img;
+                
+                if (width > height) {
+                    if (width > maxSize) {
+                        height = (height * maxSize) / width;
+                        width = maxSize;
+                    }
+                } else {
+                    if (height > maxSize) {
+                        width = (width * maxSize) / height;
+                        height = maxSize;
+                    }
+                }
+                
+                canvas.width = width;
+                canvas.height = height;
+                canvas.style.display = 'block';
+                
+                ctx.drawImage(img, 0, 0, width, height);
+            }
+
+            generateEmoji() {
+                if (!this.userImage) return;
+
+                const canvas = document.getElementById('output-canvas');
+                const ctx = canvas.getContext('2d');
+                
+                canvas.width = 512;
+                canvas.height = 512;
+                
+                // Draw the emoji base
+                ctx.drawImage(this.emojiImg, 0, 0, 512, 512);
+                
+                // Calculate position and size for the user image
+                const userImgSize = 200;
+                const userImgX = 256 - userImgSize / 2;
+                const userImgY = 180;
+                
+                // Create a circular mask for the user image
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(256, 280, userImgSize / 2, 0, 2 * Math.PI);
+                ctx.clip();
+                
+                // Draw the user image (rotated slightly)
+                ctx.translate(256, 280);
+                ctx.rotate(-20 * Math.PI / 180); // -20 degrees
+                ctx.drawImage(this.userImage, -userImgSize/2, -userImgSize/2, userImgSize, userImgSize);
+                ctx.restore();
+                
+                // Draw the arms on top
+                ctx.drawImage(this.armImg, 0, 0, 512, 512);
+                
+                this.showStep2();
+            }
+
+            downloadEmoji() {
+                const canvas = document.getElementById('output-canvas');
+                const link = document.createElement('a');
+                link.download = 'care-emoji.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            }
+
+            showStep2() {
+                document.getElementById('step1').classList.remove('active');
+                document.getElementById('step2').classList.add('active');
+            }
+
+            resetToStep1() {
+                document.getElementById('step2').classList.remove('active');
+                document.getElementById('step1').classList.add('active');
+                document.getElementById('imageInput').value = '';
+                document.getElementById('preview-canvas').style.display = 'none';
+                document.getElementById('generateBtn').style.display = 'none';
+            }
+        }
+
+        // Initialize the app when the page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            new CareEmojiGenerator();
+        });
+    </script>
+</body>
+</html>
