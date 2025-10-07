@@ -71,20 +71,19 @@ cd example
 
 ### Use `cli.py`
 
-### Manual Installation (Alternative)
-If you prefer to install dependencies manually:
-```bash
-pip install Pillow requests
-```
----
-
-### Use `cli.py`
-
 There is a file named `cli.py` in the `example/` folder. Open terminal and navigate to `example/`. Type the following:
 ```bash
 python3 cli.py -h
 ```
 It will print out usage and examples.
+
+For example:
+
+```
+python3 cli.py cli_output.png --image gtm52.png
+```
+
+In this example, `cli_output.png` will be the new image while `gtm52.png` is the image that will be added to the emoji.
 
 ### Use `Jupyter Notebook`
 
