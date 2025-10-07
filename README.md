@@ -4,6 +4,24 @@
 
 > The image files can be found at this [website](https://gamingph.com/2020/05/psd-download-for-facebook-care-emoji/).
 
+## ✨ Enhanced Fork
+
+This is an **enhanced fork** of the original [zeromath/Care-Emoji-Generator](https://github.com/zeromath/Care-Emoji-Generator) (last updated 2020). 
+
+### 🚀 Major Improvements Added:
+
+- **🌐 Production Web App** - Live at [care.nocapvibes.com](https://care.nocapvibes.com) with WSGI deployment
+- **📱 Mobile-Responsive Design** - UI that works perfectly on all devices  
+- **🔧 Modern Flask Implementation** - Updated web framework with better structure
+- **📖 Comprehensive Documentation** - Detailed README with multiple usage options
+- **🌍 GitHub Pages Deployment** - Browser-only version for instant access
+- **🔄 Active Maintenance** - Regular updates and improvements (2025)
+- Updated to support new versions of dependencies
+
+*Original repository has been inactive since 2020 - this fork brings it into the modern era!*
+
+---
+
 ## 🌐 Try It Online!
 
 **🚀 [Production Web App](https://care.nocapvibes.com)** - High-quality results with full Python processing!
