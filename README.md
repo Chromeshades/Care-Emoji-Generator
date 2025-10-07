@@ -59,7 +59,8 @@
 ## Table of Contents
 
 - [🌐 Online Web App](#-online-web-app)
-- [💻 Command Line Usage](#-command-line-usage)
+- [� Quality Comparison](#-quality-comparison)
+- [�💻 Command Line Usage](#-command-line-usage)
 - [🖥️ Local Web App](#️-local-web-app)
 - [Installation](#installation)
 - [Examples](#examples)
@@ -82,6 +83,15 @@ A convenient browser-based version with no installation required.
 - ✅ No registration required
 
 **⚠️ Quality Note:** The browser version produces lower quality output (512x512 with basic emoji graphics) compared to the Python CLI and local web app versions, which use high-resolution assets and professional image processing algorithms.
+
+### 📊 Quality Comparison
+
+Here's a visual comparison showing the quality difference between the different versions:
+
+| Python Version (CLI/Local Web App) | JavaScript Version (Browser) |
+|:---:|:---:|
+| ![Python Quality](images/python-quality.png) | ![JavaScript Quality](images/js-quality.png) |
+| **High Resolution** • **Professional Assets** • **Advanced Processing** | **Browser Optimized** • **Instant Access** • **No Installation** |
 
 ## 💻 Command Line Usage
 
