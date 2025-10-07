@@ -4,6 +4,9 @@
 ###### Requirements without Version Specifiers ######
 pillow
 requests
+flask
+werkzeug
+python-dotenv
 
 #
 ###### Requirements with Version Specifiers ######
