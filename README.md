@@ -80,7 +80,21 @@ The easiest way to use the Care Emoji Generator! No installation required.
 
 Perfect for developers and automation!
 
-### 🖥️ Local Web App
+There is a file named `cli.py` in the `example/` folder. Open terminal and navigate to `example/`. Type the following:
+```bash
+python3 cli.py -h
+```
+It will print out usage and examples.
+
+For example:
+
+```bash
+python3 cli.py ~/Downloads/cli_output.png --image gtm52.png
+```
+
+In this example, `~/Downloads/cli_output.png` will be the new image file while `gtm52.png` is the image that will be added to the emoji.
+
+## 🖥️ Local Web App
 
 Want to run the full web interface locally? Great for development or if you need ISBN support.
 
@@ -163,19 +177,7 @@ Then open your browser to `http://localhost:5337`
 
 ### 💻 Command Line Interface
 
-There is a file named `cli.py` in the `example/` folder. Open terminal and navigate to `example/`. Type the following:
-```bash
-python3 cli.py -h
-```
-It will print out usage and examples.
-
-For example:
-
-```bash
-python3 cli.py ~/Downloads/cli_output.png --image gtm52.png
-```
-
-In this example, `~/Downloads/cli_output.png` will be the new image file while `gtm52.png` is the image that will be added to the emoji.
+See the [Command Line Usage](#-command-line-usage) section above for detailed CLI instructions.
 
 ### 📓 Jupyter Notebook
 
