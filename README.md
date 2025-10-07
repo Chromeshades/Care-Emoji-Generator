@@ -20,8 +20,8 @@
 - No installation required - just visit and use!
 - Uses the same high-resolution assets as CLI
 
-### 2. **�💻 Command Line Interface (Best Quality)**
-- **Highest quality output** with professional image processing
+### 2. **💻 Command Line Interface (High Quality)**
+- **High-quality output** with professional image processing
 - Perfect for automation and batch processing
 - Uses high-resolution emoji assets and advanced algorithms
 - Supports both images and ISBN lookup
@@ -33,12 +33,12 @@
 - Run locally on your machine
 - Supports larger output sizes
 
-### 4. **🌐 Browser-Only Web App (Convenient)**
+### 4. **🌐 Browser-Only Web App (Basic Quality)**
 - **Live Demo**: [https://chromeshades.github.io/Care-Emoji-Generator/](https://chromeshades.github.io/Care-Emoji-Generator/)
 - No installation required
 - Works on mobile and desktop
 - Privacy-focused (images stay in your browser)
-- ⚠️ **Note**: Lower quality output due to browser limitations
+- ⚠️ **Note**: Basic quality output due to browser limitations
 
 
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org) 
@@ -117,7 +117,7 @@ Here's a visual comparison showing the quality difference between the different 
 
 ## 💻 Command Line Usage
 
-**Best quality output** with professional image processing algorithms and high-resolution assets.
+**High-quality output** with professional image processing algorithms and high-resolution assets.
 
 There is a file named `cli.py` in the `example/` folder. Open terminal and navigate to `example/`. Type the following:
 ```bash
